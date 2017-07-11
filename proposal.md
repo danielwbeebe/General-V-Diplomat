@@ -19,13 +19,13 @@ I'm choosing to make this game because I have always enjoyed world-domination-th
 ## Wireframe
 
 At the beginning of the game, each of the 2 players choose 3 continents.
-<img src="continent-selection-photo.JPG">
+<img src="images/continent-selection-photo.JPG">
 
 During the play, a player will click on a continent controlled by the other player to attempt to control it.
-<img src="game-play-photo.JPG">
+<img src="images/game-play-photo.JPG">
 
 When a player controls all 6 continents, the game is over.
-<img src="game-over-photo.JPG">
+<img src="images/game-over-photo.JPG">
 
 ## Initial thoughts on game structure
 
