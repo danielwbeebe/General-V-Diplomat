@@ -36,6 +36,7 @@ For a bonus, I might add a single-player option, but first I would need to creat
 ## Phases of Completion
 
 Step -2: Creating the board:
+    
     * Creating 9 divs in HTML, 6 for the continents, and 3 for the boxes below
     * Added an images of each continents
 
