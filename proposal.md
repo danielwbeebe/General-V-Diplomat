@@ -36,21 +36,22 @@ For a bonus, I might add a single-player option, but first I would need to creat
 ## Phases of Completion
 
 Step -2: Creating the board:
-    Creating 9 divs in HTML, 6 for the continents, and 3 for the boxes below
-    Added an images of each continents
+    * Creating 9 divs in HTML, 6 for the continents, and 3 for the boxes below
+    * Added an images of each continents
 
 Step -1: Creating the game logic:
-    Phase One: Continent Selection
+    
+    * Phase One: Continent Selection
         Alternating turns
             Random whether general or diplomat starts
             Each player selects 3 continents
-
+    
         The boxes under the continents:
             Turn box: says whose turn it is
             Status box: says which continent was last selected
             World box: says that players are selecting continents throughout this phase
      
-    Phase Two: Game-Play
+    * Phase Two: Game-Play
         Alternating turns
 
         For a move: 
@@ -64,7 +65,7 @@ Step -1: Creating the game logic:
             Status box: says which continent was last attacked and the result
             World box: says that the world is in jeopardy throughout this phase
 
-    Phase Three: Determining Winner
+    * Phase Three: Determining Winner
         If a player controls all 6 continents, game over. 
         The surviving player wins
         World box: 
@@ -73,22 +74,24 @@ Step -1: Creating the game logic:
 
 Step 0: Making the game look good:
 
-    Adding a (longer) introduction to the game and rules
-    Adding a (shorter) introduction for continent selection
-    Adding a (shorter) introduction for game play
-    Adding a reset button
+    * Adding a (longer) introduction to the game and rules
+    * Adding a (shorter) introduction for continent selection
+    * Adding a (shorter) introduction for game play
+    * Adding a reset button
 
 Step 1: If success in all previous steps, make 1-player version
 
-    Adding choice of 1 or 2 player version
-    If 1-player version:    
+    * Adding choice of 1 or 2 player version
+    * If 1-player version:    
         Randomize whether general or diplomat
         Adding randomization to computer's moves
 
 ## Links and Resources
 
-Creating a random number: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+Method for creating a random number: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-Stanform resentation "What makes a game fun?"" https://stanford.edu/~jbboin/doc/gamedesign.pdf
+Stanform resentation "What makes a game fun?" 
+https://stanford.edu/~jbboin/doc/gamedesign.pdf
 
 
