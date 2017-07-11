@@ -92,7 +92,7 @@ Step 1: If success in all previous steps, make 1-player version
 Method for creating a random number: 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-Stanform resentation "What makes a game fun?" 
+Stanford presentation "What makes a game fun?" 
 https://stanford.edu/~jbboin/doc/gamedesign.pdf
 
 
