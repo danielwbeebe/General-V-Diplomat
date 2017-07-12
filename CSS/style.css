@@ -20,10 +20,6 @@ h2 {
   font-size: 25px;
 }
 
-nav {
-
-}
-
 main {
  text-align: center;
  background-color: #ABB0B2;
@@ -74,18 +70,6 @@ main {
 
 #australia {
   background-image: url("../images/australia.png");
-}
-
-#status{
-
-}
-
-#turn {
-
-}
-
-#world{
-
 }
 
 .clearfix:after {
