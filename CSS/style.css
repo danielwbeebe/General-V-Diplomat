@@ -1,0 +1,74 @@
+body{
+
+}
+
+header{
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+main {
+ text-align: center;
+ background-color: #9AD2FF;
+}
+
+.box {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  align-content: center;
+  background-color: #9AD2FF;
+}
+
+#northamerica {
+  background-image: url("../images/north-america.png");
+}
+
+#europe {
+  background-image: url("../images/europe.png");
+}
+
+#asia {
+  background-image: url("../images/asia.png");
+}
+
+#southamerica {
+  background-image: url("../images/south-america.png");
+}
+
+#africa {
+  background-image: url("../images/africa.png");
+}
+
+#australia {
+  background-image: url("../images/australia.png");
+}
+
+#status{
+
+}
+
+#turn {
+
+}
+
+#world{
+
+}
+
+footer {
+
+}
