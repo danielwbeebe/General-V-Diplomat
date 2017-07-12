@@ -3,7 +3,7 @@ body {
   padding:0;
   height: 100%;
   background-color: #FF8C88;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Bellefair', serif;
   min-width: 700px;
 }
 
@@ -14,7 +14,7 @@ header{
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 70px;
 }
 
 h2 {
@@ -32,7 +32,7 @@ main {
 }
 
 .all-boxes {
-  padding: 20px 0px 20px 0px;
+  padding: 20px 20px 20px 120px;
   width: 700px;
   text-align: center;
   display: inline-block;
@@ -54,7 +54,7 @@ main {
   text-align: center;
   vertical-align: middle;
   align-content: center;
-  background-color: #F1BBFF;
+  background-color: white;
 }
 
 #northamerica {
@@ -89,7 +89,7 @@ main {
   float: right;
   position: relative;
   width: 300px;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 120px 20px 10px;
   text-align: justify;
 }
 
