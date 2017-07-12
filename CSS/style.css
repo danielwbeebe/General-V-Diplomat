@@ -9,15 +9,35 @@ body {
 
 header{
   text-align: center;
-  padding: 40px 20px 40px 20px;
-  background-color: #41C8FF;
-  font-family: ;
+  padding: 20px 20px 20px 20px;
+  background-color: #001775;
+  font-family: 'Anton', sans-serif;
+  color: #E52C1A;
 }
 
 nav {
   text-align: center;
-  padding: 40px 20px 40px 20px;
-  background-color: #41C8FF;
+  padding: 0px 10px 20px 10px;
+  background-color: #001775;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    margin: 0 30px 0 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-family: 'Bellefair', serif;
+    border: 2px solid;
+    border-radius: 15px;
+}
+
+.button:hover {
+    background-color: #D46EFF;
 }
 
 h1 {
@@ -34,6 +54,7 @@ h3 {
 
 p {
   font-size: 25px;
+  font-family: 'Bellefair', serif;
 }
 
 main {
@@ -127,7 +148,7 @@ footer {
 @media screen and (max-width: 1230px) {
   .all-boxes {
     padding: 20px 20px 20px 20px;
-    width: 805px;
+    width: 807px;
     text-align: center;
     display: inline-block;
     position: relative;
@@ -140,5 +161,17 @@ footer {
     padding: 20px 40px 20px 40px;
     text-align: justify;
     display: inline-block;
+  }
+
+  h1 {
+  font-size: 50px;
+  }
+
+  h3 {
+  font-size: 25px;
+  }
+
+  .button {
+    font-size: 20px;
   }
 }
