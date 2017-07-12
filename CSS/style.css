@@ -90,27 +90,27 @@ main {
   background-color: #80E3FF;
 }
 
-#northamerica {
+#North_America {
   background-image: url("../images/north-america.png");
 }
 
-#europe {
+#Europe {
   background-image: url("../images/europe.png");
 }
 
-#asia {
+#Asia {
   background-image: url("../images/asia.png");
 }
 
-#southamerica {
+#South_America {
   background-image: url("../images/south-america.png");
 }
 
-#africa {
+#Africa {
   background-image: url("../images/africa.png");
 }
 
-#australia {
+#Australia {
   background-image: url("../images/australia.png");
 }
 
