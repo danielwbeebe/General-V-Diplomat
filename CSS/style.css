@@ -146,6 +146,24 @@ footer {
   padding: 20px 20px 20px 20px;
 }
 
+.copyright {
+  float: left;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.links {
+  float: right;
+  padding-right: 60px;
+  padding-bottom: 10px;
+}
+
+a {
+  color: #E52C1A;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
 @media screen and (max-width: 1230px) {
   .all-boxes {
     padding: 20px 20px 20px 20px;
@@ -165,11 +183,11 @@ footer {
   }
 
   h1 {
-  font-size: 50px;
+    font-size: 50px;
   }
 
   h3 {
-  font-size: 25px;
+    font-size: 25px;
   }
 
   .button {
