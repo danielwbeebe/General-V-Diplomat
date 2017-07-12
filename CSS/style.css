@@ -13,16 +13,26 @@ header{
   background-color: #41C8FF;
 }
 
+nav {
+  text-align: center;
+  padding: 40px 20px 40px 20px;
+  background-color: #41C8FF;
+}
+
 h1 {
   font-size: 70px;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 30px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 main {
