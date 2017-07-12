@@ -4,6 +4,7 @@ body {
   height: 100%;
   background-color: #FF8C88;
   font-family: "Comic Sans MS", cursive, sans-serif;
+  min-width: 700px;
 }
 
 header{
@@ -45,7 +46,7 @@ main {
   text-align: center;
   vertical-align: middle;
   align-content: center;
-  background-color: white;
+  background-color: #F1BBFF;
 }
 
 #northamerica {
@@ -70,6 +71,10 @@ main {
 
 #australia {
   background-image: url("../images/australia.png");
+}
+
+.box:hover {
+  background-color: #D46EFF;
 }
 
 .clearfix:after {
