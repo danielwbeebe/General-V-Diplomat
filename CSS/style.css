@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding:0;
   height: 100%;
-  background-color: #FF8C88;
-  font-family: 'Bellefair', serif;
+  background-color: #001775;
+  font-family: 'Anton', sans-serif;
   min-width: 700px;
 }
 
@@ -31,13 +31,13 @@ nav {
     text-decoration: none;
     display: inline-block;
     font-size: 24px;
-    font-family: 'Bellefair', serif;
+    font-family: 'Anton', sans-serif;
     border: 2px solid;
     border-radius: 15px;
 }
 
 .button:hover {
-    background-color: #D46EFF;
+    background-color: #87FF99;
 }
 
 h1 {
@@ -59,12 +59,12 @@ p {
 
 main {
  text-align: center;
- background-color: #ABB0B2;
+ background-color: white;
  width: 100%
 }
 
 .all-boxes {
-  padding: 20px 20px 20px 100px;
+  padding: 20px 20px 10px 100px;
   width: 700px;
   text-align: center;
   display: inline-block;
@@ -81,12 +81,13 @@ main {
   vertical-align: top;
   margin-right: 5px;
   margin-bottom: 10px;
+  padding-top: 5px;
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
   vertical-align: middle;
   align-content: center;
-  background-color: white;
+  background-color: #80E3FF;
 }
 
 #northamerica {
@@ -114,7 +115,7 @@ main {
 }
 
 .box:hover {
-  background-color: #D46EFF;
+  background-color: #87FF99;
 }
 
 .aside {
@@ -135,8 +136,8 @@ main {
 }
 
 footer {
-  background-color: #FF8C88;
-  color: black;
+  background-color: #001775;
+  color: #E52C1A;
   font-size: 24px;
   bottom: 0px;
   position: relative;
