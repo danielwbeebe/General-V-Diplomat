@@ -40,6 +40,9 @@ Step -2: Creating the board:
     * Creating 9 divs in HTML, 6 for the continents, and 3 for the boxes below
     * Added an images of each continents
 
+Here is a preliminary draft of the game board:
+<img src="images/screen-shot.png">
+
 Step -1: Creating the game logic:
     
     * Phase One: Continent Selection
