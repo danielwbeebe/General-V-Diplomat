@@ -1,3 +1,9 @@
+function clickRules() {
+  console.log("Posting the game rules.")
+  document.getElementById("announceTitle").innerHTML = "The Rules";
+  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a game between 2 players. The game begins with the General and Diplomat each choosing 3 continents. After the continents are selected, the game play begins.<br><br>The General 'attacks' a continent during each turn. The Diplomat 'negotiates' with a continent for each turn. A player can attack or negotiate with any continent, regardless of location. Each turn means taking a risk. If a player is successful during a turn, that player takes control of a new continent. Failure means that the player loses a continent.<br><br>A player wins by controlling all 6 continents. If the General controls all of the continents, the world will be at war. If the Diplomat controls all of the continents, the world will be at peace.";
+};
+
 // Phase One: Continent Selection
 
   // Side narrative:
