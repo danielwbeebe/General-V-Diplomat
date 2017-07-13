@@ -126,6 +126,8 @@ main {
   text-align: justify;
 }
 
+/*creating typewriter effect for title in the title of the aside section*/
+/*Found example of the effect at: https://css-tricks.com/snippets/css/typewriter-effect/*/
 .announceTitle {
   white-space: nowrap;
   overflow: hidden;
@@ -133,19 +135,17 @@ main {
     typewriter 2s steps(50, end);
 }
 
-/*creating typewriter effect for title in the title of the aside section*/
-/*Found example of the effect at: https://css-tricks.com/snippets/css/typewriter-effect/*/
 @keyframes typewriter {
     from { width: 0 }
     to { width: 100% }
 }
 
+/*creating a fade in effect for text of the aside section*/
+/*Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/*/
 .announceText {
   animation: fadein 7s;
 }
 
-/*creating a fade in effect for text of the aside section*/
-/*Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/*/
 @keyframes fadein {
   from {
     opacity:0;

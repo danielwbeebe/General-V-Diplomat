@@ -1,3 +1,4 @@
+// making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
   console.log("Posting the game rules.")
   document.getElementById("announceTitle").innerHTML = "The Rules";
@@ -7,6 +8,12 @@ function clickRules() {
 // Phase One: Continent Selection
 
   // Side narrative:
+function startGame() {
+  console.log("Starting the game.")
+  document.getElementById("announceTitle").innerHTML = "Let's Begin";
+  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>Please alternate selecting the continents you wish to control. You each get 3 continents.<br><br>Choose wisely."
+}
+
 
   // Alternating turns
   //   Random whether general or diplomat starts
