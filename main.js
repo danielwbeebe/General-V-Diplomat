@@ -1,5 +1,9 @@
-// Setting variable for player turn - NEED TO RANDOMIZE
-var playerTurn = "General";
+// Setting variable for player turn
+var playerTurn = "";
+
+// creating empty arrays with continents for each player
+gArray = [];
+dArray = [];
 
 // making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
@@ -13,25 +17,66 @@ function clickRules() {
   // Change aside section and 3 lower boxes in the continent selecting phase of the game
 function startGame() {
   console.log("Starting the continent selection phase.")
+
+  // calling function to set random player to start
+  randomPlayer();
+
+  // changing text on game board for continent selection phase
   document.getElementById("announceTitle").innerHTML = "Begin Selecting";
   document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely."
   document.getElementById("general-status").innerHTML = "General: You will need to pick 3 continents";
   document.getElementById("diplomat-status").innerHTML = "Diplomat: You will need to pick 3 continents";
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn`;
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
   document.getElementById("turn-message").innerHTML = "Be very careful when you choose your continents"
   document.getElementById("world-message").innerHTML = "Every continent anxiously awaits the manipulation of the General and the Diplomat"
-}
-
-// function to randomize playerTurn at the start of the game - it's a 50/50 chance
-
-function randomPlayer() {
-
 };
 
+// function to randomly select starting player
+function randomPlayer() {
 
-  // Alternating turns
-  //   Random whether general or diplomat starts
-  //   Each player selects 3 continents
+// using the random number to pick a random player to start
+  console.log("Picking random player")
+
+  // got Math.floor Math.random method for getting a randomized number from:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+  var randNum = Math.floor(Math.random() * 2);
+    console.log(randNum);
+
+  // selecting either General or Diplomat to go after 50/50 chance determined
+  if (randNum === 0) {
+    playerTurn = "General";
+  } else if (randNum === 1) {
+    playerTurn = "Diplomat";
+  }
+  console.log(playerTurn);
+};
+
+// adding event listener to continent
+document.getElementById("North_America").addEventListener("click", selectContinent);
+
+  // Alternating turns to select 3 continents each
+function selectContinent() {
+
+  if (playerTurn === 'General'){
+    gArray.push('North_America');
+
+    // change color of selected continent
+    document.getElementById("North_America").style.backgroundColor = "#E52C1A";
+
+    console.log("General selected continent");
+    playerTurn = "Diplomat";
+  } else if (playerTurn === 'Diplomat') {
+    dArray.push('North_America');
+
+    // change color of selected continent
+    document.getElementById("North_America").style.backgroundColor = "#001775";
+
+    console.log("Diplomat selected continent");
+    playerTurn = "General";
+  }
+  document.getElementById("North_America").removeEventListener("click", selectContinent);
+};
 
   // The boxes under the continents:
   //   Turn box: says whose turn it is
