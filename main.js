@@ -1,3 +1,6 @@
+// Setting variable for player turn - NEED TO RANDOMIZE
+var playerTurn = "General";
+
 // making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
   console.log("Posting the game rules.")
@@ -7,12 +10,23 @@ function clickRules() {
 
 // Phase One: Continent Selection
 
-  // Side narrative:
+  // Change aside section and 3 lower boxes in the continent selecting phase of the game
 function startGame() {
-  console.log("Starting the game.")
-  document.getElementById("announceTitle").innerHTML = "Let's Begin";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>Please alternate selecting the continents you wish to control. You each get 3 continents.<br><br>Choose wisely."
+  console.log("Starting the continent selection phase.")
+  document.getElementById("announceTitle").innerHTML = "Begin Selecting";
+  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely."
+  document.getElementById("general-status").innerHTML = "General: You will need to pick 3 continents";
+  document.getElementById("diplomat-status").innerHTML = "Diplomat: You will need to pick 3 continents";
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn`;
+  document.getElementById("turn-message").innerHTML = "Be very careful when you choose your continents"
+  document.getElementById("world-message").innerHTML = "Every continent anxiously awaits the manipulation of the General and the Diplomat"
 }
+
+// function to randomize playerTurn at the start of the game - it's a 50/50 chance
+
+function randomPlayer() {
+
+};
 
 
   // Alternating turns

@@ -126,13 +126,12 @@ main {
   text-align: justify;
 }
 
-/*creating typewriter effect for title in the title of the aside section*/
+/*creating typewriter effect using steps method for title in the title of the aside section*/
 /*Found example of the effect at: https://css-tricks.com/snippets/css/typewriter-effect/*/
 .announceTitle {
   white-space: nowrap;
   overflow: hidden;
-  animation:
-    typewriter 2s steps(50, end);
+  animation: typewriter 2s steps(50, end);
 }
 
 @keyframes typewriter {
