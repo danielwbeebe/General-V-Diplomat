@@ -64,8 +64,10 @@ function selectContinent() {
 
     if (playerTurn === 'General'){
       gArray.push(this.getAttribute('id'));
+
     // change color of selected continent
       this.style.backgroundColor = "#E52C1A";
+      this.setAttribute('data-player', 'General');
       playerTurn = "Diplomat";
       this.removeEventListener("click", selectContinent);
     } else if (playerTurn === 'Diplomat') {
@@ -73,6 +75,7 @@ function selectContinent() {
 
     // change color of selected continent
       this.style.backgroundColor = "#001775";
+      this.setAttribute('data-player', 'Diplomat');
       playerTurn = "General";
       this.removeEventListener("click", selectContinent);
     }
@@ -103,9 +106,10 @@ function playGame() {
   console.log("the players can now attack each other")
 
   document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is now.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>Good luck!";
-  // calling function to set random player to start
-  randomWinner();
+  document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is now.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
+  document.getElementById("status-text").innerHTML = "General and Diplomat, you will each need to fight it out until someone wins.";
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to move against a continent.`;
+  document.getElementById("turn-message").innerHTML = "Try not to lose!.";
 
   // adding event listeners to continents at start of game
   addNewListeners();
@@ -123,16 +127,17 @@ function addNewListeners() {
 // creating variable for winner of each turn
 var turnWinner = "General";
 
-// function attackContinent() {
-//   console.log("The attacking begins")
-//   // adding new event listeners to continents
-//   var allContinents = document.querySelectorAll(".continents .box");
+// function for the game attacks
+function attackContinent() {
+  console.log("The attacking begins")
 
-//     if (playerTurn === 'General'){
-//       gArray.push(this.getAttribute('id'));
+    if ((playerTurn === 'General') && (turnWinner === 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
+      this.style.backgroundColor = "#E52C1A";
+    };
 
 //   // call turnWinner function to see if the attacker wins
 //      // randomWinner();
+
 
 //     // change color of selected continent
 //       this.style.backgroundColor = "#E52C1A";
@@ -148,37 +153,24 @@ var turnWinner = "General";
 //     }
 //     document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent.`;
 //     selectDone();
-// };
 
-function randomWinner() {
-  console.log("calling for a random winner");
-
-// using a random number to pick a winner for each attack
-  var randNum = Math.floor(Math.random() * 2);
-  consol.log("random number for move winner")
-
-  // selecting either General or Diplomat to go after 50/50 chance determined
-  if (randNum === 0) {
-    turnWinner = "General";
-  } else if (randNum === 1) {
-    turnWinner = "Diplomat";
-  }
 };
 
 
+// function randomWinner() {
+//   console.log("calling for a random winner");
 
- // Alternating turns
+// // using a random number to pick a winner for each attack
+//   var randNum = Math.floor(Math.random() * 2);
+//   consol.log("random number for move winner")
 
- //    For a move:
- //        Player clicks on a continent belonging to the other player
- //        Random determination whether the move is a win or a loss
- //        If win, the player gains that continent
- //        If loss, the player loses a random continent
-
- //    The boxes below the continents:
- //        Turn box: says whose turn it is
- //        Status box: says which continent was last attacked and the result
- //        World box: says that the world is in jeopardy throughout this phase
+//   // selecting either General or Diplomat to go after 50/50 chance determined
+//   if (randNum === 0) {
+//     turnWinner = "General";
+//   } else if (randNum === 1) {
+//     turnWinner = "Diplomat";
+//   }
+// };
 
 // Phase Three: Selecting A Winner
 
