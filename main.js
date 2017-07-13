@@ -21,13 +21,16 @@ function startGame() {
   // calling function to set random player to start
   randomPlayer();
 
+  // adding event listeners to continents at start of game
+  addListeners();
+
   // changing text on game board for continent selection phase
   document.getElementById("announceTitle").innerHTML = "Begin Selecting";
   document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely."
   document.getElementById("general-status").innerHTML = "General: You will need to pick 3 continents";
   document.getElementById("diplomat-status").innerHTML = "Diplomat: You will need to pick 3 continents";
   document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
-  document.getElementById("turn-message").innerHTML = "Be very careful when you choose your continents"
+  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents"
   document.getElementById("world-message").innerHTML = "Every continent anxiously awaits the manipulation of the General and the Diplomat"
 };
 
@@ -35,13 +38,9 @@ function startGame() {
 function randomPlayer() {
 
 // using the random number to pick a random player to start
-  console.log("Picking random player")
-
   // got Math.floor Math.random method for getting a randomized number from:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
   var randNum = Math.floor(Math.random() * 2);
-    console.log(randNum);
 
   // selecting either General or Diplomat to go after 50/50 chance determined
   if (randNum === 0) {
@@ -49,11 +48,17 @@ function randomPlayer() {
   } else if (randNum === 1) {
     playerTurn = "Diplomat";
   }
-  console.log(playerTurn);
 };
 
-// adding event listener to continent
-document.getElementById("North_America").addEventListener("click", selectContinent);
+// adding event listener to continents
+function addListeners() {
+  var allContinents = document.querySelectorAll(".continents .box");
+    console.log(allContinents);
+
+  for (let i=0; i<allContinents.length; i++) {
+    allContinents[i].addEventListener("click", selectContinent);
+  };
+};
 
   // Alternating turns to select 3 continents each
 function selectContinent() {
@@ -63,19 +68,17 @@ function selectContinent() {
 
     // change color of selected continent
     document.getElementById("North_America").style.backgroundColor = "#E52C1A";
-
-    console.log("General selected continent");
     playerTurn = "Diplomat";
+    document.getElementById("North_America").removeEventListener("click", selectContinent);
   } else if (playerTurn === 'Diplomat') {
     dArray.push('North_America');
 
     // change color of selected continent
     document.getElementById("North_America").style.backgroundColor = "#001775";
-
-    console.log("Diplomat selected continent");
     playerTurn = "General";
+    document.getElementById("North_America").removeEventListener("click", selectContinent);
   }
-  document.getElementById("North_America").removeEventListener("click", selectContinent);
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
 };
 
   // The boxes under the continents:
