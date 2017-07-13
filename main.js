@@ -26,11 +26,10 @@ function startGame() {
 
   // changing text on game board for continent selection phase
   document.getElementById("announceTitle").innerHTML = "Begin Selecting";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely."
-  document.getElementById("general-status").innerHTML = "General: You will need to pick 3 continents";
-  document.getElementById("diplomat-status").innerHTML = "Diplomat: You will need to pick 3 continents";
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
-  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents";
+  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely.";
+  document.getElementById("status-text").innerHTML = "General and Diplomat, you will each need to pick 3 continents.";
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent.`;
+  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents.";
 };
 
 // function to randomly select starting player
@@ -77,7 +76,7 @@ function selectContinent() {
       playerTurn = "General";
       this.removeEventListener("click", selectContinent);
     }
-    document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
+    document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent.`;
     selectDone();
 };
 
@@ -86,6 +85,14 @@ function selectContinent() {
 function selectDone() {
   if (gArray.length + dArray.length === 6) {
     console.log("The selection phase is done.")
+
+    if (playerTurn === 'General') {
+      document.getElementById("turn-player").innerHTML = `${playerTurn}, attack a continent controlled by the Diplomat.`;
+      document.getElementById("turn-message").innerHTML = "Click a blue continent to attack.";
+    } else if (playerTurn === 'Diplomat'){
+      document.getElementById("turn-player").innerHTML = `${playerTurn}, negotiate with a continent controlled by the General.`;
+      document.getElementById("turn-message").innerHTML = "Click a red continent to negotiate with.";
+    };
   };
 };
 
