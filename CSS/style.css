@@ -30,7 +30,7 @@ nav {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Anton', sans-serif;
     border: 2px solid;
     border-radius: 15px;
@@ -41,7 +41,7 @@ nav {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 55px;
 }
 
 h2 {
@@ -192,7 +192,7 @@ a {
   padding-right: 10px;
 }
 
-@media screen and (max-width: 1323px) {
+@media screen and (max-width: 1370px) {
   .all-boxes {
     padding: 20px 20px 20px 20px;
     width: 900px;
@@ -204,14 +204,14 @@ a {
   .aside {
     float: none;
     position: relative;
-    width: 300px;
+    width: 400px;
     padding: 20px 40px 20px 40px;
     text-align: justify;
     display: inline-block;
   }
 
   h1 {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   h3 {
@@ -219,6 +219,6 @@ a {
   }
 
   .button {
-    font-size: 20px;
+    font-size: 16px;
   }
 }

@@ -30,8 +30,7 @@ function startGame() {
   document.getElementById("general-status").innerHTML = "General: You will need to pick 3 continents";
   document.getElementById("diplomat-status").innerHTML = "Diplomat: You will need to pick 3 continents";
   document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
-  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents"
-  document.getElementById("world-message").innerHTML = "Every continent anxiously awaits the manipulation of the General and the Diplomat"
+  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents";
 };
 
 // function to randomly select starting player
@@ -53,7 +52,6 @@ function randomPlayer() {
 // adding event listener to continents
 function addListeners() {
   var allContinents = document.querySelectorAll(".continents .box");
-    console.log(allContinents);
 
   for (let i=0; i<allContinents.length; i++) {
     allContinents[i].addEventListener("click", selectContinent);
@@ -64,12 +62,9 @@ function addListeners() {
 function selectContinent() {
 
   var allContinents = document.querySelectorAll(".continents .box");
-    console.log(allContinents);
 
     if (playerTurn === 'General'){
-      console.log(this.getAttribute('id'));
       gArray.push(this.getAttribute('id'));
-
     // change color of selected continent
       this.style.backgroundColor = "#E52C1A";
       playerTurn = "Diplomat";
@@ -80,15 +75,19 @@ function selectContinent() {
     // change color of selected continent
       this.style.backgroundColor = "#001775";
       playerTurn = "General";
-     this.removeEventListener("click", selectContinent);
+      this.removeEventListener("click", selectContinent);
     }
     document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
+    selectDone();
 };
 
-  // The boxes under the continents:
-  //   Turn box: says whose turn it is
-  //   Status box: says which continent was last selected
-  //   World box: says that players are selecting continents throughout this phase
+// adding function to end continent selection phase
+
+function selectDone() {
+  if (gArray.length + dArray.length === 6) {
+    console.log("The selection phase is done.")
+  };
+};
 
 // Phase Two: Game Play
 
