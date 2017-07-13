@@ -125,49 +125,10 @@ function addNewListeners() {
   };
 
 // creating variable for winner of each turn
-var turnWinner = "Diplomat";
+var turnWinner = "General";
 
 // creating variable for winner of the game
 var gameWinner = "";
-
-// function for the game attacks
-function attackContinent() {
-  console.log("The attacking begins")
-  if (gameWinner === "") {
-
-    if ((playerTurn === 'General') && (turnWinner === 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
-      this.style.backgroundColor = "#E52C1A";
-      this.setAttribute('data-player', 'Diplomat');
-      playerTurn = "Diplomat";
-    }
-      else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
-      playerTurn = "Diplomat";
-    }
-      else if ((playerTurn === 'Diplomat') && (turnWinner === 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
-      this.style.backgroundColor = "#001775";
-      this.setAttribute('data-player', 'General');
-      playerTurn = "General";
-    }
-      else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
-      playerTurn = "General";
-    }
-  };  document.getElementById("turn-player").innerHTML = `${playerTurn}, pick a continent controlled by your adversary.`;
-      document.getElementById("turn-message").innerHTML = "Click to make your move.";
-};
-
-// Function to find a winner
-function checkWinner() {
-
-  for (let i=0; i<allContinents.length; i++) {
-    if (allContinents[i].getAttribute("data-player") === 'Diplomat') {
-        gameWinner = "Diplomat";
-        console.log("Diplomat wins!");
-    }; if (allContinents[i].getAttribute("data-player") === 'General') {
-        gameWinner = "General";
-        console.log("General wins!");
-    };
-  };
-};
 
 // NEED TO ADD RANDOMIZER FUNCTION SO SOMEONE CAN WIN
 // function randomWinner() {
@@ -185,5 +146,55 @@ function checkWinner() {
 //   }
 // };
 
+// Function to find a winner
+function checkWinner() {
+  let generalCounter = 0;
+  let diplomatCounter = 0;
+
+  for (let i=0; i<allContinents.length; i++) {
+    if (allContinents[i].getAttribute("data-player") === 'Diplomat') {
+        diplomatCounter = (diplomatCounter + 1);
+    }else if(allContinents[i].getAttribute("data-player") === 'General') {
+        generalCounter = (generalCounter +1);
+    };
+  };
+
+  if (generalCounter === 6) {
+    gameWinner = "General";
+    console.log("General wins!");
+  } else if (diplomatCounter === 6) {
+    gameWinner = "General";
+    console.log("Diplomat wins!");
+  }
+};
+
+// function for the game attacks
+function attackContinent() {
+  console.log("Attack!")
+
+  if (gameWinner === "") {
+
+    if ((playerTurn === 'General') && (turnWinner === 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
+      this.style.backgroundColor = "#E52C1A";
+      this.setAttribute('data-player', 'General');
+      playerTurn = "Diplomat";
+    }
+      else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
+      playerTurn = "Diplomat";
+    }
+      else if ((playerTurn === 'Diplomat') && (turnWinner === 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
+      this.style.backgroundColor = "#001775";
+      this.setAttribute('data-player', 'Diplomat');
+      playerTurn = "General";
+    }
+      else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
+      playerTurn = "General";
+    }
+  };
+
+  document.getElementById("turn-player").innerHTML = `${playerTurn}, pick a continent controlled by your adversary.`;
+  document.getElementById("turn-message").innerHTML = "Click to make your move.";
+  checkWinner();
+};
 
 // Resetting and playing again
