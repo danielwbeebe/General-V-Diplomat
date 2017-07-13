@@ -63,22 +63,26 @@ function addListeners() {
   // Alternating turns to select 3 continents each
 function selectContinent() {
 
-  if (playerTurn === 'General'){
-    gArray.push('North_America');
+  var allContinents = document.querySelectorAll(".continents .box");
+    console.log(allContinents);
+
+    if (playerTurn === 'General'){
+      console.log(this.getAttribute('id'));
+      gArray.push(this.getAttribute('id'));
 
     // change color of selected continent
-    document.getElementById("North_America").style.backgroundColor = "#E52C1A";
-    playerTurn = "Diplomat";
-    document.getElementById("North_America").removeEventListener("click", selectContinent);
-  } else if (playerTurn === 'Diplomat') {
-    dArray.push('North_America');
+      this.style.backgroundColor = "#E52C1A";
+      playerTurn = "Diplomat";
+      this.removeEventListener("click", selectContinent);
+    } else if (playerTurn === 'Diplomat') {
+      dArray.push(this.getAttribute('id'));
 
     // change color of selected continent
-    document.getElementById("North_America").style.backgroundColor = "#001775";
-    playerTurn = "General";
-    document.getElementById("North_America").removeEventListener("click", selectContinent);
-  }
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
+      this.style.backgroundColor = "#001775";
+      playerTurn = "General";
+     this.removeEventListener("click", selectContinent);
+    }
+    document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent`;
 };
 
   // The boxes under the continents:
