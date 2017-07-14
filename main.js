@@ -26,7 +26,7 @@ var allContinents = document.querySelectorAll(".continents .box");
 // Making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
   document.getElementById("announceTitle").innerHTML = "The Rules";
-  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game. To begin, each player chooses 3 continents. Next, the game play begins.<br><br>The General 'attacks' one of the Diplomat's continents for each turn. The Diplomat 'negotiates' with one of the General's continents for each turn. If a player is successful during a turn, that player takes control of the continent. But losing means the player loses a continent.<br><br>A player wins by controlling all 6 continents.";
+  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game. A player is randomly chosen to start. To begin, each player chooses 3 continents.<br><br>The General is RED; the Diplomat is BLUE.<br><br>The General 'attacks' one of the Diplomat's continents for each turn. The Diplomat 'negotiates' with one of the General's continents for each turn. Each move relies on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.";
 };
 
 /* Function starting game, changing board messages and calling random player function
@@ -45,12 +45,14 @@ function startGame() {
 
   /*
   Hides the Rules and Start buttons as soon as the game starts
+  And removes the intro and rules section, and re-adjusts padding for game board
   Found useful example of display none at:
   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_display
   */
   document.getElementById("play").style.display = "none";
   document.getElementById("rules").style.display = "none";
   document.getElementById("aside-intro").style.display = "none";
+  document.getElementById("all-boxes").style.padding="60px 20px 60px 20px";
 
    /*
     Audio plays for start of game
@@ -160,7 +162,7 @@ function randomWinner() {
   sets a maximum number of turns before a random winner is selected,
   to avoid an overly long game caused by the 50/50 chance for each turn
   */
-  if (numTurns < 12) {
+  if (numTurns < 15) {
 
     // Using a random number to pick a winner for each attack
     var randNum = Math.floor(Math.random() * 2);
