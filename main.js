@@ -13,6 +13,9 @@ var turnWinner = "";
 //creating variable for previous turn's player's success or failure
 var winFail = "";
 
+// creating variable for number of turns
+var numTurns = 0;
+
 // Creating empty arrays with continents for each player
 gArray = [];
 dArray = [];
@@ -49,6 +52,16 @@ function startGame() {
   */
   document.getElementById("play").style.display = "none";
   document.getElementById("rules").style.display = "none";
+
+   /*
+    Audio plays for start of game
+    Clip from: https://freesound.org/
+    Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
+    */
+    var audio = new Audio('audio/win-audio.wav');
+
+    // Looked at MDN for .play method: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
+    audio.play();
 };
 
 // function to randomly select starting player
@@ -129,6 +142,10 @@ function playGame() {
 
   // Adding event listeners to continents at start of game
   addNewListeners();
+
+  // Audio plays for the begin of game play
+  var audio = new Audio('audio/lose-audio.wav');
+  audio.play();
 };
 
 // Adding new listeners so the boxes can be clicked again
@@ -142,15 +159,26 @@ function addNewListeners() {
 // Getting a random 1 or 0 to determine winner of each move.
 function randomWinner() {
 
-// Using a random number to pick a winner for each attack
-  var randNum = Math.floor(Math.random() * 2);
+  /*
+  sets a maximum number of turns before a random winner is selected,
+  to avoid an overly long game caused by the 50/50 chance for each turn
+  */
+  if (numTurns < 15) {
 
-  // Selecting either General or Diplomat to win an attack, with 50/50 chance
-  if (randNum === 0) {
-    turnWinner = "General";
-  } else if (randNum === 1) {
-    turnWinner = "Diplomat";
-  }
+    // Using a random number to pick a winner for each attack
+    var randNum = Math.floor(Math.random() * 2);
+
+    // Selecting either General or Diplomat to win an attack, with 50/50 chance
+    if (randNum === 0) {
+      turnWinner = "General";
+    } else if (randNum === 1) {
+      turnWinner = "Diplomat";
+    }
+  };
+
+  // Increasing the variable for number of turns taken
+  numTurns = (numTurns + 1);
+  console.log(numTurns);
 };
 
 /*
@@ -178,6 +206,11 @@ function checkWinner() {
     document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns.";
     document.getElementById("announceTitle").innerHTML = "The End";
     document.getElementById("announceText").innerHTML = "It's all over.<br><br>Chaos everywhere!<br><br>Hope you\'re proud of yourself!";
+
+    // Audio plays if General wins the game
+    // Clip from: https://freesound.org/
+    var audio = new Audio('audio/game-victory.wav');
+    audio.play();
   }
   // If the diplomat wins (has all 6 continents), then diplomat wins and new messages appear
   else if (diplomatCounter === 6) {
@@ -186,6 +219,11 @@ function checkWinner() {
     document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns";
     document.getElementById("announceTitle").innerHTML = "The End";
     document.getElementById("announceText").innerHTML = "Congratulations!<br><br>The world is grateful to you!<br><br>All is well!"
+
+    // Audio plays if Diplomat wins the game
+    // Clip from: https://freesound.org/
+    var audio = new Audio('audio/game-victory.wav');
+    audio.play();
   }
 };
 
@@ -203,9 +241,8 @@ function attackContinent() {
       otherTurn = 'General';
       winFail = ' took your continent away!'
 
-      // Audio plays for a successful turn
+      // Audio plays for a losing turn
       // Clip from: https://freesound.org/
-      // Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
       var audio = new Audio('audio/win-audio.wav');
       audio.play();
 
