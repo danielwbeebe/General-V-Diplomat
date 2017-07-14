@@ -163,7 +163,7 @@ function randomWinner() {
   sets a maximum number of turns before a random winner is selected,
   to avoid an overly long game caused by the 50/50 chance for each turn
   */
-  if (numTurns < 15) {
+  if (numTurns < 12) {
 
     // Using a random number to pick a winner for each attack
     var randNum = Math.floor(Math.random() * 2);
@@ -175,10 +175,6 @@ function randomWinner() {
       turnWinner = "Diplomat";
     }
   };
-
-  // Increasing the variable for number of turns taken
-  numTurns = (numTurns + 1);
-  console.log(numTurns);
 };
 
 /*
@@ -246,12 +242,20 @@ function attackContinent() {
       var audio = new Audio('audio/win-audio.wav');
       audio.play();
 
+      // Increasing the variable for number of turns taken
+      numTurns = (numTurns + 1);
+      console.log(numTurns);
+
     }
       // For General's turn, if turn not winner, click just changes turns to diplomat
       else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
       playerTurn = "Diplomat";
       otherTurn = 'General';
       winFail = ' FAILED to reduce your power!'
+
+      // Increasing the variable for number of turns taken
+      numTurns = (numTurns + 1);
+      console.log(numTurns);
 
       // Audio plays for a losing turn
       // Clip from: https://freesound.org/
@@ -269,6 +273,10 @@ function attackContinent() {
       // Variable plays for a successful turn
       var audio = new Audio('audio/win-audio.wav');
       audio.play();
+
+      // Increasing the variable for number of turns taken
+      numTurns = (numTurns + 1);
+      console.log(numTurns);
     }
       // For General's turn, if turn not winner, click just changes turns to general
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
@@ -279,6 +287,10 @@ function attackContinent() {
       // Audio plays for a losing turn
       var audio = new Audio('audio/lose-audio.wav');
       audio.play();
+
+      // Increasing the variable for number of turns taken
+      numTurns = (numTurns + 1);
+      console.log(numTurns);
     }
   };
 
