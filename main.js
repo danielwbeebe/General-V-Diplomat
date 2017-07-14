@@ -4,6 +4,15 @@ var playerTurn = "";
 // Setting variable for previous turn's player
 var otherTurn = "";
 
+// Creating variable for winner of the game
+var gameWinner = "";
+
+// Creating variable for winner of each turn
+var turnWinner = "";
+
+//creating variable for previous turn's player's success or failure
+var winFail = "";
+
 // Creating empty arrays with continents for each player
 gArray = [];
 dArray = [];
@@ -122,15 +131,6 @@ function addNewListeners() {
     };
   };
 
-// Creating variable for winner of the game
-var gameWinner = "";
-
-// Creating variable for winner of each turn
-var turnWinner = "";
-
-//creating variable for previous turn's player's success or failure
-var winFail = "";
-
 // Getting a random 1 or 0 to determine winner of each move.
 function randomWinner() {
 
@@ -149,7 +149,7 @@ function randomWinner() {
 Function to find a winner
 Thanks and credit to Jonathan Ahrens at SRC for helping to understand
 how to fix a bug in my check for winner function
-and to hoist above attack function
+and to hoist above attack function to avoid JS glitch
 */
 function checkWinner() {
   let generalCounter = 0;
@@ -199,7 +199,7 @@ function attackContinent() {
       else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
       playerTurn = "Diplomat";
       otherTurn = 'General';
-      winFail = ' failed to reduce your power!'
+      winFail = ' FAILED to reduce your power!'
     }
     // For Diplomat's turn, if turn winner, attack on general contient changes it to Blue
       else if ((playerTurn === 'Diplomat') && (turnWinner === 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
@@ -213,17 +213,20 @@ function attackContinent() {
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
       playerTurn = "General";
       otherTurn = 'Diplomat';
-      winFail = ' failed to reduce your power!'
+      winFail = ' FAILED to reduce your power!'
     }
   };
 
   // Calling the function to check for a winner
   checkWinner();
 
+  if (gameWinner === "") {
+
   // Creating new message for turn
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
   // Updating the status message
-  document.getElementById("status-text").innerHTML = `The ${otherTurn} ${winFail}`;
+  document.getElementById("status-text").innerHTML = `${otherTurn} ${winFail}`;
+  }
 
 };
