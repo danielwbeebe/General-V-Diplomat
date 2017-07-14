@@ -1,6 +1,6 @@
 # General Versus Diplomat
 
-<img src="images/intro-screen-shot.JPG">
+<img src="images/intro-screen-shot.png">
 
 ## What is 'General Versus Diplomat'?
 
