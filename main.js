@@ -10,7 +10,6 @@ var allContinents = document.querySelectorAll(".continents .box");
 
 // making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
-  console.log("Posting the game rules.")
   document.getElementById("announceTitle").innerHTML = "The Rules";
   document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game. To begin, each player chooses 3 continents. Next, the game play begins.<br><br>The General 'attacks' one of the Diplomat's continents for each turn. The Diplomat 'negotiates' with one of the General's continents for each turn. If a player is successful during a turn, that player takes control of the continent. But losing means the player loses a continent.<br><br>A player wins by controlling all 6 continents.";
 };
@@ -19,7 +18,6 @@ function clickRules() {
 
   // Change aside section and 3 lower boxes in the continent selecting phase of the game
 function startGame() {
-  console.log("Starting the continent selection phase.")
 
   // calling function to set random player to start
   randomPlayer();
@@ -31,8 +29,7 @@ function startGame() {
   document.getElementById("announceTitle").innerHTML = "Begin Selecting";
   document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely.";
   document.getElementById("status-text").innerHTML = "General and Diplomat, you will each need to pick 3 continents.";
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to move against a continent.`;
-  document.getElementById("turn-message").innerHTML = "Be saavy in choosing your continents.";
+  document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 };
 
 // function to randomly select starting player
@@ -80,7 +77,7 @@ function selectContinent() {
       playerTurn = "General";
       this.removeEventListener("click", selectContinent);
     }
-    document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to pick a continent.`;
+    document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
     selectDone();
 };
 
@@ -88,15 +85,12 @@ function selectContinent() {
 
 function selectDone() {
   if (gArray.length + dArray.length === 6) {
-    console.log("The selection phase is done.")
     document.getElementById("status-text").innerHTML = "General and Diplomat, you must now struggle to win the world to your side.";
     playGame();
     if (playerTurn === 'General') {
-      document.getElementById("turn-player").innerHTML = `${playerTurn}, attack a continent controlled by the Diplomat.`;
-      document.getElementById("turn-message").innerHTML = "Click a blue continent to attack.";
+      document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
     } else if (playerTurn === 'Diplomat'){
-      document.getElementById("turn-player").innerHTML = `${playerTurn}, negotiate with a continent controlled by the General.`;
-      document.getElementById("turn-message").innerHTML = "Click a red continent to negotiate with.";
+      document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
     };
   };
 };
@@ -104,13 +98,11 @@ function selectDone() {
 // Phase Two: Game Play
 
 function playGame() {
-  console.log("The players can now attack each other")
 
   document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
   document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is now.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
   document.getElementById("status-text").innerHTML = "General and Diplomat, you will each need to fight it out until someone wins.";
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, it's your turn to move against a continent.`;
-  document.getElementById("turn-message").innerHTML = "Try not to lose!";
+  document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
   // adding event listeners to continents at start of game
   addNewListeners();
@@ -124,27 +116,25 @@ function addNewListeners() {
     };
   };
 
-// creating variable for winner of each turn
-var turnWinner = "Diplomat";
-
 // creating variable for winner of the game
 var gameWinner = "";
 
-// NEED TO ADD RANDOMIZER FUNCTION SO SOMEONE CAN WIN
-// function randomWinner() {
-//   console.log("calling for a random winner");
+// creating variable for winner of each turn
+var turnWinner = "";
 
-// // using a random number to pick a winner for each attack
-//   var randNum = Math.floor(Math.random() * 2);
-//   consol.log("random number for move winner")
+// getting a random 1 or 0 to determine winner of each move.
+function randomWinner() {
 
-//   // selecting either General or Diplomat to go after 50/50 chance determined
-//   if (randNum === 0) {
-//     turnWinner = "General";
-//   } else if (randNum === 1) {
-//     turnWinner = "Diplomat";
-//   }
-// };
+// using a random number to pick a winner for each attack
+  var randNum = Math.floor(Math.random() * 2);
+
+  // selecting either General or Diplomat to win an attack, with 50/50 chance
+  if (randNum === 0) {
+    turnWinner = "General";
+  } else if (randNum === 1) {
+    turnWinner = "Diplomat";
+  }
+};
 
 // Function to find a winner
 function checkWinner() {
@@ -161,19 +151,15 @@ function checkWinner() {
 
   if (generalCounter === 6) {
     gameWinner = "General";
-    console.log("General wins!");
     document.getElementById("status-text").innerHTML = "The GENERAL has won!<br><br>The entire world is at WAR!";
-    document.getElementById("turn-player").innerHTML = "Game Over!<br><br>No more turns.";
-    document.getElementById("turn-message").innerHTML = "";
+    document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns.";
     document.getElementById("announceTitle").innerHTML = "The End";
     document.getElementById("announceText").innerHTML = "It's all over.<br><br>Chaos everywhere!<br><br>Hope you\'re proud of yourself!";
   }
   else if (diplomatCounter === 6) {
     gameWinner = "General";
-    console.log("Diplomat wins!");
     document.getElementById("status-text").innerHTML = "The DIPLOMAT has won!<br><br>The entire world is at PEACE!";
-    document.getElementById("turn-player").innerHTML = "Game Over!<br><br>No more turns";
-    document.getElementById("turn-message").innerHTML = "";
+    document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns";
     document.getElementById("announceTitle").innerHTML = "The End";
     document.getElementById("announceText").innerHTML = "Congratulations!<br><br>The world is grateful to you!<br><br>All is well!"
   }
@@ -181,7 +167,7 @@ function checkWinner() {
 
 // function for the game attacks
 function attackContinent() {
-  console.log("Attack!")
+  randomWinner()
 
   if (gameWinner === "") {
 
@@ -203,8 +189,7 @@ function attackContinent() {
     }
   };
 
-  document.getElementById("turn-player").innerHTML = `${playerTurn}, pick a continent controlled by your adversary.`;
-  document.getElementById("turn-message").innerHTML = "Click to make your move.";
+  document.getElementById("turn-message").innerHTML = `${playerTurn}, pick a continent controlled by your adversary.`;
   checkWinner();
 };
 
