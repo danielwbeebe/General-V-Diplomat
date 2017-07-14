@@ -104,7 +104,7 @@ function selectDone() {
 // Phase Two: Game Play
 
 function playGame() {
-  console.log("the players can now attack each other")
+  console.log("The players can now attack each other")
 
   document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
   document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is now.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
@@ -125,7 +125,7 @@ function addNewListeners() {
   };
 
 // creating variable for winner of each turn
-var turnWinner = "General";
+var turnWinner = "Diplomat";
 
 // creating variable for winner of the game
 var gameWinner = "";
@@ -151,10 +151,10 @@ function checkWinner() {
   let generalCounter = 0;
   let diplomatCounter = 0;
 
-  for (let i=0; i<allContinents.length; i++) {
+  for (let i = 0; i < allContinents.length; i++) {
     if (allContinents[i].getAttribute("data-player") === 'Diplomat') {
         diplomatCounter = (diplomatCounter + 1);
-    }else if(allContinents[i].getAttribute("data-player") === 'General') {
+    } else if(allContinents[i].getAttribute("data-player") === 'General') {
         generalCounter = (generalCounter +1);
     };
   };
@@ -162,9 +162,20 @@ function checkWinner() {
   if (generalCounter === 6) {
     gameWinner = "General";
     console.log("General wins!");
-  } else if (diplomatCounter === 6) {
+    document.getElementById("status-text").innerHTML = "The GENERAL has won!<br><br>The entire world is at WAR!";
+    document.getElementById("turn-player").innerHTML = "Game Over!<br><br>No more turns.";
+    document.getElementById("turn-message").innerHTML = "";
+    document.getElementById("announceTitle").innerHTML = "The End";
+    document.getElementById("announceText").innerHTML = "It's all over.<br><br>Chaos everywhere!<br><br>Hope you\'re proud of yourself!";
+  }
+  else if (diplomatCounter === 6) {
     gameWinner = "General";
     console.log("Diplomat wins!");
+    document.getElementById("status-text").innerHTML = "The DIPLOMAT has won!<br><br>The entire world is at PEACE!";
+    document.getElementById("turn-player").innerHTML = "Game Over!<br><br>No more turns";
+    document.getElementById("turn-message").innerHTML = "";
+    document.getElementById("announceTitle").innerHTML = "The End";
+    document.getElementById("announceText").innerHTML = "Congratulations!<br><br>The world is grateful to you!<br><br>All is well!"
   }
 };
 
