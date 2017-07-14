@@ -7,6 +7,10 @@ body {
   min-width: 925px;
 }
 
+/*
+Thanks and credit to Alex Calleia for his input on using a better color scheme
+for the game, and recommedation to look at other world domination games' color schemes
+*/
 header{
   text-align: center;
   padding: 20px 20px 20px 20px;
@@ -126,8 +130,12 @@ main {
   text-align: justify;
 }
 
-/*creating typewriter effect using steps method for title in the title of the aside section*/
-/*Found example of the effect at: https://css-tricks.com/snippets/css/typewriter-effect/*/
+/*
+Creating typewriter effect using steps method for title
+in the title of the aside section
+Found example of the effect at:
+https://css-tricks.com/snippets/css/typewriter-effect/
+*/
 .announceTitle {
   white-space: nowrap;
   overflow: hidden;
@@ -139,8 +147,10 @@ main {
     to { width: 100% }
 }
 
-/*creating a fade in effect for text of the aside section*/
-/*Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/*/
+/*
+Creating a fade in effect for text of the aside section
+Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/
+*/
 .announceText {
   animation: fadein 7s;
 }

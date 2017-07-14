@@ -14,8 +14,6 @@ function clickRules() {
   document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game. To begin, each player chooses 3 continents. Next, the game play begins.<br><br>The General 'attacks' one of the Diplomat's continents for each turn. The Diplomat 'negotiates' with one of the General's continents for each turn. If a player is successful during a turn, that player takes control of the continent. But losing means the player loses a continent.<br><br>A player wins by controlling all 6 continents.";
 };
 
-// Phase One: Continent Selection
-
   // Change aside section and 3 lower boxes in the continent selecting phase of the game
 function startGame() {
 
@@ -35,9 +33,11 @@ function startGame() {
 // function to randomly select starting player
 function randomPlayer() {
 
-// using the random number to pick a random player to start
-  // got Math.floor Math.random method for getting a randomized number from:
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+/*
+Creating function to pick a random player to start
+I got Math.floor Math.random method for getting a randomized number from:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+*/
   var randNum = Math.floor(Math.random() * 2);
 
   // selecting either General or Diplomat to go after 50/50 chance determined
@@ -55,7 +55,7 @@ function addListeners() {
   };
 };
 
-  // Alternating turns to select 3 continents each
+// Alternating turns to select 3 continents each
 function selectContinent() {
 
   var allContinents = document.querySelectorAll(".continents .box");
@@ -63,7 +63,10 @@ function selectContinent() {
     if (playerTurn === 'General'){
       gArray.push(this.getAttribute('id'));
 
-    // change color of selected continent
+/*
+Thanks and credit to Phil Zak for advice on setting an attribute to the continents
+to utilize later in determining winner change color of selected continent
+*/
       this.style.backgroundColor = "#E52C1A";
       this.setAttribute('data-player', 'General');
       playerTurn = "Diplomat";
@@ -95,8 +98,7 @@ function selectDone() {
   };
 };
 
-// Phase Two: Game Play
-
+// function to begin the game play
 function playGame() {
 
   document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
@@ -137,6 +139,7 @@ function randomWinner() {
 };
 
 // Function to find a winner
+// Thanks and credit to Jonathan Ahrens at SRC for helping to understand how to fix a bug in my check for winner function
 function checkWinner() {
   let generalCounter = 0;
   let diplomatCounter = 0;
@@ -189,7 +192,7 @@ function attackContinent() {
     }
   };
 
-  document.getElementById("turn-message").innerHTML = `${playerTurn}, pick a continent controlled by your adversary.`;
+  document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
   checkWinner();
 };
 
