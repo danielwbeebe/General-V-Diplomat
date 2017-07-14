@@ -39,8 +39,16 @@ function startGame() {
   // Changing text on game board for continent selection phase
   document.getElementById("announceTitle").innerHTML = "Begin Selecting";
   document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely.";
-  document.getElementById("status-text").innerHTML = "Pick your continents.";
+  document.getElementById("status-text").innerHTML = "Pick a continent.";
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
+
+  /*
+  Hides the Rules and Start buttons as soon as the game starts
+  Found useful example of display none at:
+  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_display
+  */
+  document.getElementById("play").style.display = "none";
+  document.getElementById("rules").style.display = "none";
 };
 
 // function to randomly select starting player
@@ -220,6 +228,7 @@ function attackContinent() {
   // Calling the function to check for a winner
   checkWinner();
 
+  // Adding this if statement fixed glitch where messages would be blank sometimes
   if (gameWinner === "") {
 
   // Creating new message for turn
