@@ -40,8 +40,6 @@ function startGame() {
   addListeners();
 
   // Changing text on game board for continent selection phase
-  document.getElementById("announceTitle").innerHTML = "Begin Selecting";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, welcome.<br><br>You will alternate selecting the continents you wish to control.<br><br>You each get 3 continents.<br><br>Choose wisely.";
   document.getElementById("status-text").innerHTML = "Pick a continent.";
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
@@ -52,6 +50,7 @@ function startGame() {
   */
   document.getElementById("play").style.display = "none";
   document.getElementById("rules").style.display = "none";
+  document.getElementById("aside-intro").style.display = "none";
 
    /*
     Audio plays for start of game
@@ -135,8 +134,6 @@ function selectDone() {
 // Function to begin the game play
 function playGame() {
 
-  document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is on!<br><br>General, attack BLUE continents.<br><br>Diplomat, negotiate with RED continents.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
   document.getElementById("status-text").innerHTML = "General, attack BLUE continents.<br>Diplomat, negotiate with RED continents.";
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
@@ -200,8 +197,6 @@ function checkWinner() {
     gameWinner = "General";
     document.getElementById("status-text").innerHTML = "The GENERAL has won!<br><br>The entire world is at WAR!";
     document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns.";
-    document.getElementById("announceTitle").innerHTML = "The End";
-    document.getElementById("announceText").innerHTML = "It's all over.<br><br>Chaos everywhere!<br><br>Hope you\'re proud of yourself!";
 
     // Audio plays if General wins the game
     // Clip from: https://freesound.org/
@@ -213,8 +208,6 @@ function checkWinner() {
     gameWinner = "General";
     document.getElementById("status-text").innerHTML = "The DIPLOMAT has won!<br><br>The entire world is at PEACE!";
     document.getElementById("turn-message").innerHTML = "Game Over!<br><br>No more turns";
-    document.getElementById("announceTitle").innerHTML = "The End";
-    document.getElementById("announceText").innerHTML = "Congratulations!<br><br>The world is grateful to you!<br><br>All is well!"
 
     // Audio plays if Diplomat wins the game
     // Clip from: https://freesound.org/
@@ -223,7 +216,7 @@ function checkWinner() {
   }
 };
 
-// Function for the game attacks
+// Function for the game moves-attacks
 function attackContinent() {
   randomWinner()
 
@@ -304,6 +297,6 @@ function attackContinent() {
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
   // Updating the status message
-  document.getElementById("status-text").innerHTML = `${otherTurn} ${winFail}`;
+  document.getElementById("status-text").innerHTML = `Keep playing! ${otherTurn} ${winFail}`;
   }
 };

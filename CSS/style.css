@@ -73,11 +73,11 @@ main {
 }
 
 .all-boxes {
-  padding: 20px 20px 10px 100px;
+  padding: 60px 20px 60px 100px;
   width: 900px;
   text-align: center;
-  display: inline-block;
   position: relative;
+  display: inline-block;
 }
 
 .box, .info {
@@ -131,7 +131,7 @@ main {
   float: right;
   position: relative;
   width: 300px;
-  padding: 20px 50px 20px 0;
+  padding: 60px 50px 60px 0;
   text-align: justify;
 }
 
@@ -209,7 +209,7 @@ a {
 
 @media screen and (max-width: 1370px) {
   .all-boxes {
-    padding: 20px 20px 20px 20px;
+    padding: 60px 20px 60px 20px;
     width: 900px;
     text-align: center;
     display: inline-block;
@@ -220,7 +220,7 @@ a {
     float: none;
     position: relative;
     width: 400px;
-    padding: 20px 40px 20px 40px;
+    padding: 60px 40px 60px 40px;
     text-align: justify;
     display: inline-block;
   }
