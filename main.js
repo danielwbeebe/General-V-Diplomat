@@ -299,6 +299,6 @@ function attackContinent() {
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
   // Updating the status message
-  document.getElementById("status-text").innerHTML = `Keep playing! ${otherTurn} ${winFail}`;
+  document.getElementById("status-text").innerHTML = `Play! ${otherTurn} ${winFail}`;
   }
 };
