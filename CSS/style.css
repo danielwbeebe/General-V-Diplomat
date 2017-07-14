@@ -17,6 +17,7 @@ header{
   background-color: #001775;
   font-family: 'Anton', sans-serif;
   color: #E52C1A;
+  display: inline;
 }
 
 nav {
@@ -59,6 +60,10 @@ h3 {
 p {
   font-size: 22px;
   font-family: 'Bellefair', serif;
+}
+
+#turn-message, #status-text {
+  font-size: 28px;
 }
 
 main {
@@ -148,7 +153,7 @@ https://css-tricks.com/snippets/css/typewriter-effect/
 }
 
 /*
-Creating a fade in effect for text of the aside section
+Creating a fade in effect for text of the aside section:
 Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/
 */
 .announceText {
