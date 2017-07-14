@@ -123,7 +123,7 @@ function selectDone() {
 function playGame() {
 
   document.getElementById("announceTitle").innerHTML = "Begin The Struggle";
-  document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is now.<br><br>General, attack BLUE continents.<br><br>Diplomat, negotiate with RED continents.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
+  document.getElementById("announceText").innerHTML = "General and Diplomat, the fight is on!<br><br>General, attack BLUE continents.<br><br>Diplomat, negotiate with RED continents.<br><br>Whether the world suffers war or enjoys peace is up to you!<br><br>May the better player win!";
   document.getElementById("status-text").innerHTML = "General, attack BLUE continents.<br>Diplomat, negotiate with RED continents.";
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
@@ -202,12 +202,24 @@ function attackContinent() {
       playerTurn = "Diplomat";
       otherTurn = 'General';
       winFail = ' took your continent away!'
+
+      // Audio plays for a successful turn
+      // Clip from: https://freesound.org/
+      // Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
+      var audio = new Audio('audio/win-audio.wav');
+      audio.play();
+
     }
       // For General's turn, if turn not winner, click just changes turns to diplomat
       else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
       playerTurn = "Diplomat";
       otherTurn = 'General';
       winFail = ' FAILED to reduce your power!'
+
+      // Audio plays for a losing turn
+      // Clip from: https://freesound.org/
+      var audio = new Audio('audio/lose-audio.wav');
+      audio.play();
     }
     // For Diplomat's turn, if turn winner, attack on general contient changes it to Blue
       else if ((playerTurn === 'Diplomat') && (turnWinner === 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
@@ -216,12 +228,20 @@ function attackContinent() {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' took your continent away!'
+
+      // Variable plays for a successful turn
+      var audio = new Audio('audio/win-audio.wav');
+      audio.play();
     }
       // For General's turn, if turn not winner, click just changes turns to general
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' FAILED to reduce your power!'
+
+      // Audio plays for a losing turn
+      var audio = new Audio('audio/lose-audio.wav');
+      audio.play();
     }
   };
 
@@ -237,5 +257,4 @@ function attackContinent() {
   // Updating the status message
   document.getElementById("status-text").innerHTML = `${otherTurn} ${winFail}`;
   }
-
 };
