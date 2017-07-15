@@ -54,11 +54,11 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 32px;
 }
 
 p {
-  font-size: 22px;
+  font-size: 28px;
   font-family: 'Bellefair', serif;
 }
 
@@ -74,16 +74,20 @@ main {
 
 .all-boxes {
   padding: 60px 20px 60px 100px;
-  width: 900px;
+  width: 1000px;
   text-align: center;
   position: relative;
   display: inline-block;
 }
 
+#continents-north, #continents-south {
+  display: none;
+}
+
 .box, .info {
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: 225px;
+  height: 225px;
   border-style: solid;
   border-color: black;
   border-width: 5px;
@@ -128,11 +132,13 @@ main {
 }
 
 .aside {
-  float: right;
+  float: none;
   position: relative;
-  width: 300px;
-  padding: 60px 50px 60px 0;
+  width: 600px;
+  padding: 60px 0px 60px 0px;
   text-align: justify;
+  display: block;
+  margin: auto;
 }
 
 /*
@@ -207,20 +213,30 @@ a {
   padding-right: 10px;
 }
 
-@media screen and (max-width: 1370px) {
+@media screen and (max-width: 1000px) {
+
+  body {
+    min-width: 800px;
+  }
+
   .all-boxes {
     padding: 60px 20px 60px 20px;
-    width: 900px;
+    width: 800px;
     text-align: center;
     display: inline-block;
     position: relative;
   }
 
+  .box, .info {
+    width: 175px;
+    height: 175px;
+  }
+
   .aside {
     float: none;
     position: relative;
-    width: 400px;
-    padding: 60px 40px 60px 40px;
+    width: 475px;
+    padding: 60px 0 60px 0;
     text-align: justify;
     display: inline-block;
   }
@@ -229,8 +245,20 @@ a {
     font-size: 45px;
   }
 
+  h2 {
+    font-size: 25px;
+  }
+
   h3 {
     font-size: 25px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  #turn-message, #status-text {
+    font-size: 24px;
   }
 
   .button {

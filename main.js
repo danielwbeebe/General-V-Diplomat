@@ -44,17 +44,19 @@ function startGame() {
   document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
 
   /*
-  Hides the Rules and Start buttons as soon as the game starts
+  Hides the Rules and Start buttons as soon as the game starts, and reveals the game board
   And removes the intro and rules section, and re-adjusts padding for game board
-  Found useful example of display none at:
+  Found helpful example of display none at:
   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_display
   */
   document.getElementById("play").style.display = "none";
   document.getElementById("rules").style.display = "none";
   document.getElementById("aside-intro").style.display = "none";
   document.getElementById("all-boxes").style.padding="60px 20px 60px 20px";
+  document.getElementById("continents-north").style.display = "inline-block";
+  document.getElementById("continents-south").style.display = "inline-block";
 
-   /*
+    /*
     Audio plays for start of game
     Clip from: https://freesound.org/
     Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
@@ -179,8 +181,7 @@ function randomWinner() {
 /*
 Function to find a winner
 Thanks and credit to Jonathan Ahrens at SRC for helping to understand
-how to fix a bug in my check for winner function
-and to hoist above attack function to avoid JS glitch
+hoisting to avoid JS glitch
 */
 function checkWinner() {
   let generalCounter = 0;
