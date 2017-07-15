@@ -26,7 +26,7 @@ var allContinents = document.querySelectorAll(".continents .box");
 // Making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
   document.getElementById("announceTitle").innerHTML = "The Rules";
-  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game. A player is randomly chosen to start. To begin, each player chooses 3 continents.<br><br>The General is RED; the Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents. Each move relies on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.";
+  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game.<br><br>A player is randomly chosen to start the continent-selection process. Each player chooses 3 continents.<br><br>The General is RED.<br><br>The Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents.<br><br>Each move relies on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.";
 };
 
 /* Function starting game, changing board messages and calling random player function
@@ -187,6 +187,7 @@ function checkWinner() {
   let generalCounter = 0;
   let diplomatCounter = 0;
 
+  // For loop checking to see how many continents each player controls
   for (let i = 0; i < allContinents.length; i++) {
     if (allContinents[i].getAttribute("data-player") === 'Diplomat') {
         diplomatCounter = (diplomatCounter + 1);
