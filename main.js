@@ -23,7 +23,11 @@ dArray = [];
 // Creating variable for all continents
 var allContinents = document.querySelectorAll(".continents .box");
 
-// automatically playing typing sound when introduction displays
+/*
+Automatically playing typing sound when introduction displays
+Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
+Looked at MDN for .play method: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
+*/
 var audio = new Audio('audio/typing-sound.wav');
 audio.play();
 
@@ -86,11 +90,8 @@ function startGame() {
     /*
     Audio plays for start of game
     Clip from: https://freesound.org/
-    Found method to play audio at: https://stackoverflow.com/questions/9419263/playing-audio-with-javascript
     */
     var audio = new Audio('audio/win-audio.wav');
-
-    // Looked at MDN for .play method: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
     audio.play();
 };
 
