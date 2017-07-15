@@ -25,8 +25,23 @@ var allContinents = document.querySelectorAll(".continents .box");
 
 // Making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
-  document.getElementById("announceTitle").innerHTML = "The Rules";
-  document.getElementById("announceText").innerHTML = "\'General Versus Diplomat\' is a 2-player game.<br><br>A player is randomly chosen to start the continent-selection process. Each player chooses 3 continents.<br><br>The General is RED.<br><br>The Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents.<br><br>Each move relies on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.";
+
+  /* removing the Introdution title and text so that, when the rules title and text
+  are added, the typewriter effect for the title and the fade-in effect for the text
+  will be implemented for the rules section when it appears.
+  Thanks and credit to J Silverstein for suggesing removing the entire id
+  and restoring it to re-generate the CSS animation.
+  */
+  document.getElementById("announceTitle").remove();
+  document.getElementById("announceText").remove();
+
+  // creating rules title and text to add back if rule button clicked
+  let rulesDiv = document.createElement('div');
+    rulesDiv.innerHTML = "<h3 class='announceTitle' id='announceTitle'>The Rules</h3><p class='announceText' id='announceText'>\'General Versus Diplomat\' is a 2-player game.<br><br>A player is randomly chosen to start the continent-selection process. Each player chooses 3 continents.<br><br>The General is RED.<br><br>The Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents.<br><br>The success of a move depends on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.</p><br>";
+
+  // appending the rules title and text back to the 'aside' section
+  let intro = document.querySelector('#aside-intro');
+    intro.appendChild(rulesDiv);
 };
 
 /* Function starting game, changing board messages and calling random player function
