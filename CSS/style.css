@@ -151,7 +151,7 @@ https://css-tricks.com/snippets/css/typewriter-effect/
 .announceTitle {
   white-space: nowrap;
   overflow: hidden;
-  animation: typewriter 2s steps(50, end);
+  animation: typewriter 6s steps(60, end);
 }
 
 @keyframes typewriter {

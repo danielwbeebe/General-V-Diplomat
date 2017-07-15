@@ -23,6 +23,10 @@ dArray = [];
 // Creating variable for all continents
 var allContinents = document.querySelectorAll(".continents .box");
 
+// automatically playing typing sound when introduction displays
+var audio = new Audio('audio/typing-sound.wav');
+audio.play();
+
 // Making the rules appear in the aside section when the "Rules" button is clicked
 function clickRules() {
 
@@ -37,11 +41,19 @@ function clickRules() {
 
   // creating rules title and text to add back if rule button clicked
   let rulesDiv = document.createElement('div');
-    rulesDiv.innerHTML = "<h3 class='announceTitle' id='announceTitle'>The Rules</h3><p class='announceText' id='announceText'>\'General Versus Diplomat\' is a 2-player game.<br><br>A player is randomly chosen to start the continent-selection process. Each player chooses 3 continents.<br><br>The General is RED.<br><br>The Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents.<br><br>The success of a move depends on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.</p><br>";
+    rulesDiv.innerHTML = "<h3 class='announceTitle' id='announceTitle'>The Rules of 'General vs. Diplomat'</h3><p class='announceText' id='announceText'>\'General Versus Diplomat\' is a 2-player game.<br><br>A player is randomly chosen to start the continent-selection process. Each player chooses 3 continents.<br><br>The General is RED.<br><br>The Diplomat is BLUE.<br><br>After the setup, the General 'attacks' the Diplomat's continents; the Diplomat 'negotiates' with the General's continents.<br><br>The success of a move depends on chance. If a player is successful during a turn, that player takes control of the continent.<br><br>A player wins by controlling all 6 continents.</p><br>";
 
   // appending the rules title and text back to the 'aside' section
   let intro = document.querySelector('#aside-intro');
     intro.appendChild(rulesDiv);
+
+  // Audio plays if General wins the game
+  // Clip from: https://freesound.org/
+  var audio = new Audio('audio/typing-sound.wav');
+  audio.play();
+
+  // Removing the rules button after it is clicked
+  document.getElementById("rules").style.display = "none";
 };
 
 /* Function starting game, changing board messages and calling random player function
