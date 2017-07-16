@@ -18,6 +18,8 @@ A player wins by controlling all 6 continents. If the General controls all of th
 
 I chose to make this game because I have always enjoyed world-domination-themed games, such as Risk and Civilization. The theme itself adds to the enjoyment of the game, even if the game-play is relatively simple.
 
+The game is deployed here: http://general-vs-diplomat.bitballoon.com/
+
 ## Technical Discussion
 
 The game utilizes the following technologies:

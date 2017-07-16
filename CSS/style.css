@@ -181,15 +181,6 @@ Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/
   }
 }
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  content: " ";
-  clear: both;
-  height: 0;
-  font-size: 0;
-}
-
 footer {
   background-color: #001775;
   color: #E52C1A;
