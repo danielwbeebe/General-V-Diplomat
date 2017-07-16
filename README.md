@@ -60,7 +60,7 @@ Before creating the game, I began by making several wire-frames for this project
 
 ### Wireframes
 
-Original wirefram for the beginning of the game:
+Original wireframe for the beginning of the game:
 
 <img src="images/continent-selection-photo.JPG">
 
@@ -73,6 +73,8 @@ Original wireframe for end of the game:
 <img src="images/game-over-photo.JPG">
 
 Turning the game from a concept into a playable game was a lot of fun!
+
+While creating the game, I adjusted the game board by deleting the 'world' box and moving the 'turn' and 'status' boxes to the right side of the board. I also decided to hide the board during the introduction to make the player focus on the introduction and rules before starting. In terms of the game-play experience, I mosty implemented my original plan - however, I decided to use audio effects (not visual effects) to signal wins and failures.
 
 Thanks to the following for providing their comments along the way: Jonathan Ahrens, John Bell, Alex Calleia, J Silverstein, and Phil Zak.
 
