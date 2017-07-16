@@ -32,6 +32,7 @@ The game utilizes the following technologies:
 Here is the CSS code for the typewriter effect and the fade-in for the introduction and rules:
 
 CSS:
+'''
 .announceTitle {
   white-space: nowrap;
   overflow: hidden;
@@ -55,6 +56,7 @@ CSS:
     opacity:1;
   }
 }
+'''
 
 In the JavaScript, DOM manipulation is used to replace the introduction text with the rules of the game. Initially, the typewriter effect did not display for the rules. However, I overcame that challenge by using DOM manipulation to completely remove the introduction (including its HTML tags), creating a new 'div' tag for the rules section, with the 'announceTitle' and 'announceText' classes so that the CSS animations are called again when the rules text appears.
 
