@@ -8,7 +8,9 @@ General Versus Diplomat' is a turn-based game between 2 players, a 'General' and
 
 The game board includes 6 continents: (top row) North America, Europe, Asia; and (bottom row)  South America, Africa, Australia. To the right of the continents are 2 boxes: "Turn" and "Status".
 
-The game begins with the General and Diplomat alternating in choosing their continents. Each player will control 3 continents at the start.
+The game begins with a short introduction to the game. The players can also click on a 'rules' button to read read a more technical description of the rules of the game.
+
+Next, the General and Diplomat alternating in choosing their continents. Each player will control 3 continents at the start.
 
 After the continents are selected, the game play begins. The General 'attacks' a continent for his turn. The Diplomat 'negotiates' with a continent for his turn. A player can attack or negotiate with any continent, regardless of location. There is a 50% chance of success. Success means that the player now controls a new continent. Failure means that the player loses a continent. Skipping turns is not allowed. 
 
@@ -37,7 +39,7 @@ Here is the JavaScript code for determining who gets the first move in the game:
 
       if (randNum === 0) {
         playerTurn = "General";
-      } else if (randNum === 1) {
+      } else {
         playerTurn = "Diplomat";
       }
     };

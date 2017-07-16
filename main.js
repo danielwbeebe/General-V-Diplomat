@@ -104,7 +104,7 @@ function randomPlayer() {
   // Selecting either General or Diplomat to start after 50/50 chance determined
   if (randNum === 0) {
     playerTurn = "General";
-  } else if (randNum === 1) {
+  } else {
     playerTurn = "Diplomat";
   }
 };
