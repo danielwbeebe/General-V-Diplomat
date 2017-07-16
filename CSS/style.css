@@ -69,6 +69,7 @@ p {
 
 #turn-message, #status-text {
   font-size: 28px;
+  animation: fadein 4s;
 }
 
 main {

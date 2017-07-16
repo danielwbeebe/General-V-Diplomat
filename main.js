@@ -256,7 +256,7 @@ function checkWinner() {
 
 // Function for the game moves-attacks
 function attackContinent() {
-  randomWinner()
+  randomWinner();
 
   if (gameWinner === "") {
 
@@ -268,25 +268,20 @@ function attackContinent() {
       otherTurn = 'General';
       winFail = ' took your continent away!'
 
+      // Increasing the variable for number of turns taken
+      numTurns = (numTurns + 1);
+
       // Audio plays for a losing turn
       // Clip from: https://freesound.org/
       var audio = new Audio('audio/win-audio.wav');
       audio.play();
-
-      // Increasing the variable for number of turns taken
-      numTurns = (numTurns + 1);
-      console.log(numTurns);
-
     }
       // For General's turn, if turn not winner, click just changes turns to diplomat
       else if ((playerTurn === 'General') && (turnWinner !== 'General') && (this.getAttribute("data-player") == 'Diplomat')) {
       playerTurn = "Diplomat";
       otherTurn = 'General';
       winFail = ' FAILED to reduce your power!'
-
-      // Increasing the variable for number of turns taken
       numTurns = (numTurns + 1);
-      console.log(numTurns);
 
       // Audio plays for a losing turn
       // Clip from: https://freesound.org/
@@ -300,28 +295,22 @@ function attackContinent() {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' took your continent away!'
+      numTurns = (numTurns + 1);
 
       // Variable plays for a successful turn
       var audio = new Audio('audio/win-audio.wav');
       audio.play();
-
-      // Increasing the variable for number of turns taken
-      numTurns = (numTurns + 1);
-      console.log(numTurns);
     }
       // For General's turn, if turn not winner, click just changes turns to general
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' FAILED to reduce your power!'
+      numTurns = (numTurns + 1);
 
       // Audio plays for a losing turn
       var audio = new Audio('audio/lose-audio.wav');
       audio.play();
-
-      // Increasing the variable for number of turns taken
-      numTurns = (numTurns + 1);
-      console.log(numTurns);
     }
   };
 
