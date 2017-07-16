@@ -31,6 +31,8 @@ The game utilizes the following technologies:
 
 ### Notes on Game Structure
 
+In terms of game structure, the game is broken down into 3 parts: (1) introduction; (2) continent-selection; and (3) game play. The introduction phase offers the opportunity to read text about the rules of the game. Second, the continent selection process begins with a randomly selected player. The players alternate selecting 3 continents each. Third, game play commences, with each player clicking on an opposing player's continent to try to take it. Each click causes a 50/50 randomizer functiont to determine whether the turn is a win or not. When one player has all 6 continents, the game is over. At that point, the players can click a 'reset' button to play again.
+
 Here is the JavaScript code for determining who gets the first move in the game:
 
     function randomPlayer() {
@@ -49,6 +51,21 @@ In terms of challenges, in the JavaScript, DOM manipulation is used to replace t
 ## The Making of 'General Versus Diplomat'
 
 I made this game over a 5-day period and enjoyed every minute of it.
+
+Before creating the game, I began by making several wire-frames for this project:
+
+### Wireframes
+
+Original wirefram for the beginning of the game:
+<img src="images/continent-selection-photo.JPG">
+
+Original wirefram for game play: 
+<img src="images/game-play-photo.JPG">
+
+Original wirefram for end of the game:
+<img src="images/game-over-photo.JPG">
+
+Turning the game from a concept into a playable game was a lot of fun!
 
 Thanks to the following for providing their comments along the way: Jonathan Ahrens, John Bell, Alex Calleia, J Silverstein, and Phil Zak.
 
