@@ -6,13 +6,13 @@
 
 General Versus Diplomat' is a turn-based game between 2 players, a 'General' and a 'Diplomat'. 
 
-The game board includes 6 continents: (top row) North America, Europe, Asia; and (bottom row)  South America, Africa, Australia. Below the continents are 3 boxes: "Status", "Turn", and "World"
+The game board includes 6 continents: (top row) North America, Europe, Asia; and (bottom row)  South America, Africa, Australia. To the right of the continents are 2 boxes: "Turn" and "Status".
 
-The game begins with the general and diplomat alternating in choosing their continents. Who chooses first is random. Each player will control 3 continents at the start.
+The game begins with the General and Diplomat alternating in choosing their continents. Each player will control 3 continents at the start.
 
-After the continents are assigned, the game play begins. The general 'attacks' a continent for his turn. The diplomat 'negotiates' with a continent for his turn. A player can attack or negotiate with any continent, regardless of location. There is a 50% chance of success. Success means that the player now controls a new continent. Failure means that the player loses a continent. Skipping turns is not allowed. 
+After the continents are selected, the game play begins. The General 'attacks' a continent for his turn. The Diplomat 'negotiates' with a continent for his turn. A player can attack or negotiate with any continent, regardless of location. There is a 50% chance of success. Success means that the player now controls a new continent. Failure means that the player loses a continent. Skipping turns is not allowed. 
 
-The "Turn" box declares whose turn it is. The "Status" box tells the players what just happened, i.e. whether the last player's move succeeded or failed.
+The "Turn" box declares whose turn it is. The "Status" box tells whether the last player's move succeeded or failed.
 
 A player wins by controlling all 6 continents. If the General controls all of the continents, the world will be at war. If the Diplomat controls all of the continents, the world will be at peace.
 
@@ -27,7 +27,34 @@ The game utilizes the following technologies:
 
 ### Notes on Game Structure
 
-[WILL ADD Code samples, description of challenges overcome, etc.]
+Here is the CSS code for the typewriter effect and the fade-in for the introduction and rules:
+
+CSS:
+.announceTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 6s steps(60, end);
+}
+
+@keyframes typewriter {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.announceText {
+  animation: fadein 7s;
+}
+
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+In the JavaScript, DOM manipulation is used to replace the introduction text with the rules of the game. Initially, the typewriter effect did not display for the rules. However, I overcame that challenge by using DOM manipulation to completely remove the introduction (including its HTML tags), creating a new 'div' tag for the rules section, with the 'announceTitle' and 'announceText' classes so that the CSS animations are called again when the rules text appears.
 
 ## The Making of 'General Versus Diplomat'
 
