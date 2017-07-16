@@ -219,7 +219,7 @@ a {
   padding-right: 10px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
 
   body {
     min-width: 800px;
@@ -271,3 +271,59 @@ a {
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: 900px) {
+
+  body {
+    min-width: 700px;
+  }
+
+  .all-boxes {
+    padding: 50px 15px 50px 15px;
+    width: 700px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+
+  .box, .info {
+    width: 150px;
+    height: 150px;
+  }
+
+  .aside {
+    float: none;
+    position: relative;
+    width: 400px;
+    padding: 50px 0 50px 0;
+    text-align: justify;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #turn-message, #status-text {
+    font-size: 20px;
+  }
+
+  .button {
+    font-size: 12px;
+  }
+}
+
+
+

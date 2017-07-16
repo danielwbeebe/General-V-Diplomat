@@ -301,7 +301,7 @@ function attackContinent() {
       var audio = new Audio('audio/violin-strum.wav');
       audio.play();
     }
-      // For Diplomat's turn, if turn not winner, click just changes turns to general
+      // For Diplomat's turn, if not turn winner, click just changes turns to general
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
       playerTurn = "General";
       otherTurn = 'Diplomat';
