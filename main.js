@@ -169,7 +169,7 @@ function playGame() {
   addNewListeners();
 
   // Audio plays for the begin of game play
-  var audio = new Audio('audio/lose-audio.wav');
+  var audio = new Audio('audio/war-audio.wav');
   audio.play();
 };
 
@@ -188,7 +188,7 @@ function randomWinner() {
   sets a maximum number of turns before a random winner is selected,
   to avoid an overly long game caused by the 50/50 chance for each turn
   */
-  if (numTurns < 15) {
+  if (numTurns < 20) {
 
     // Using a random number to pick a winner for each attack
     var randNum = Math.floor(Math.random() * 2);
@@ -268,12 +268,12 @@ function attackContinent() {
       otherTurn = 'General';
       winFail = ' took your continent away!'
 
-      // Increasing the variable for number of turns taken
+      // Increasing the variable for number of turns taken to avoid overly-long game
       numTurns = (numTurns + 1);
 
-      // Audio plays for a losing turn
+      // Audio plays for a winning turn
       // Clip from: https://freesound.org/
-      var audio = new Audio('audio/win-audio.wav');
+      var audio = new Audio('audio/violin-strum.wav');
       audio.play();
     }
       // For General's turn, if turn not winner, click just changes turns to diplomat
@@ -285,7 +285,7 @@ function attackContinent() {
 
       // Audio plays for a losing turn
       // Clip from: https://freesound.org/
-      var audio = new Audio('audio/lose-audio.wav');
+      var audio = new Audio('audio/low-string.wav');
       audio.play();
     }
     // For Diplomat's turn, if turn winner, attack on general contient changes it to Blue
@@ -297,11 +297,11 @@ function attackContinent() {
       winFail = ' took your continent away!'
       numTurns = (numTurns + 1);
 
-      // Variable plays for a successful turn
-      var audio = new Audio('audio/win-audio.wav');
+      // Variable plays for a winning turn
+      var audio = new Audio('audio/violin-strum.wav');
       audio.play();
     }
-      // For General's turn, if turn not winner, click just changes turns to general
+      // For Diplomat's turn, if turn not winner, click just changes turns to general
       else if ((playerTurn === 'Diplomat') && (turnWinner !== 'Diplomat') && (this.getAttribute("data-player") == 'General')) {
       playerTurn = "General";
       otherTurn = 'Diplomat';
@@ -309,7 +309,7 @@ function attackContinent() {
       numTurns = (numTurns + 1);
 
       // Audio plays for a losing turn
-      var audio = new Audio('audio/lose-audio.wav');
+      var audio = new Audio('audio/low-string.wav');
       audio.play();
     }
   };
