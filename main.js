@@ -1,19 +1,12 @@
-// Setting variable for player turn
+/*
+Setting variables for player turn, non-player turn, previous turn, game winner,
+turn winner, if previous turn was a win, and number of turns
+*/
 var playerTurn = "";
-
-// Setting variable for previous turn's player
 var otherTurn = "";
-
-// Creating variable for winner of the game
 var gameWinner = "";
-
-// Creating variable for winner of each turn
 var turnWinner = "";
-
-//creating variable for previous turn's player's success or failure
 var winFail = "";
-
-// creating variable for number of turns
 var numTurns = 0;
 
 // Creating empty arrays with continents for each player
@@ -87,12 +80,15 @@ function startGame() {
   document.getElementById("continents-north").style.display = "inline-block";
   document.getElementById("continents-south").style.display = "inline-block";
 
-    /*
-    Audio plays for start of game
-    Clip from: https://freesound.org/
-    */
-    var audio = new Audio('audio/win-audio.wav');
-    audio.play();
+  // Displaying reset button when game starts
+  document.getElementById("reset").style.display = "inline-block";
+
+  /*
+  Audio plays for start of game
+  Clip from: https://freesound.org/
+  */
+  var audio = new Audio('audio/win-audio.wav');
+  audio.play();
 };
 
 // function to randomly select starting player
