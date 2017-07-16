@@ -25,40 +25,22 @@ The game is deployed here: http://general-vs-diplomat.bitballoon.com/
 The game utilizes the following technologies:
 * HTML (general framework for the game board)
 * CSS (style, animations, adaptive design for web browser width)
-* JavaScript (functions for the game logic, manipulating the DOM to change the game board, create sound effects)
+* JavaScript (functions for the game logic, randomizer to choose first player and decide turn winner, manipulating the DOM to change the game board, create sound effects)
 
 ### Notes on Game Structure
 
-Here is the CSS code for the typewriter effect and the fade-in for the introduction and rules:
+Here is the JavaScript code for determining who gets the first move in the game:
 
-CSS:
-'''
-.announceTitle {
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typewriter 6s steps(60, end);
-}
+      var randNum = Math.floor(Math.random() * 2);
 
-@keyframes typewriter {
-    from { width: 0 }
-    to { width: 100% }
-}
+      if (randNum === 0) {
+        playerTurn = "General";
+      } else if (randNum === 1) {
+        playerTurn = "Diplomat";
+      }
+    };
 
-.announceText {
-  animation: fadein 7s;
-}
-
-@keyframes fadein {
-  from {
-    opacity:0;
-  }
-  to {
-    opacity:1;
-  }
-}
-'''
-
-In the JavaScript, DOM manipulation is used to replace the introduction text with the rules of the game. Initially, the typewriter effect did not display for the rules. However, I overcame that challenge by using DOM manipulation to completely remove the introduction (including its HTML tags), creating a new 'div' tag for the rules section, with the 'announceTitle' and 'announceText' classes so that the CSS animations are called again when the rules text appears.
+In terms of challenges, in the JavaScript, DOM manipulation is used to replace the introduction text with the rules of the game. Initially, the typewriter effect did not display for the rules. However, I overcame that challenge by using DOM manipulation to completely remove the introduction (including its HTML tags), creating a new 'div' tag for the rules section, with the 'announceTitle' and 'announceText' classes so that the CSS animations are called again when the rules text appears.
 
 ## The Making of 'General Versus Diplomat'
 

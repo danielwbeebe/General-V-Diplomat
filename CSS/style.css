@@ -174,10 +174,10 @@ Found example of the effect at: http://jsfiddle.net/SO_AMK/VV2ek/
 
 @keyframes fadein {
   from {
-    opacity:0;
+    opacity: 0;
   }
   to {
-    opacity:1;
+    opacity: 1;
   }
 }
 
