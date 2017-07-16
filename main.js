@@ -234,6 +234,11 @@ function checkWinner() {
     // Clip from: https://freesound.org/
     var audio = new Audio('audio/game-victory.wav');
     audio.play();
+
+    // Turn off event listeners if general wins
+    for (let i=0; i < allContinents.length; i++) {
+      allContinents[i].removeEventListener("click", attackContinent);
+    }
   }
   // If the diplomat wins (has all 6 continents), then diplomat wins and new messages appear
   else if (diplomatCounter === 6) {
@@ -245,6 +250,11 @@ function checkWinner() {
     // Clip from: https://freesound.org/
     var audio = new Audio('audio/game-victory.wav');
     audio.play();
+
+    // Turn off event listeners if Diplomat wins
+    for (let i=0; i < allContinents.length; i++) {
+      allContinents[i].removeEventListener("click", attackContinent);
+    }
   }
 };
 
