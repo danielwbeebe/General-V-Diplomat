@@ -31,6 +31,8 @@ The game utilizes the following technologies:
 
 Here is the JavaScript code for determining who gets the first move in the game:
 
+    function randomPlayer() {
+
       var randNum = Math.floor(Math.random() * 2);
 
       if (randNum === 0) {
