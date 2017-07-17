@@ -214,9 +214,9 @@ function checkWinner() {
   // For loop checking to see how many continents each player controls
   for (let i = 0; i < allContinents.length; i++) {
     if (allContinents[i].getAttribute("data-player") === 'Diplomat') {
-        diplomatCounter = (diplomatCounter + 1);
+        diplomatCounter++;
     } else if(allContinents[i].getAttribute("data-player") === 'General') {
-        generalCounter = (generalCounter +1);
+        generalCounter++;
     };
   };
 
@@ -269,7 +269,7 @@ function attackContinent() {
       winFail = ' took your continent away!'
 
       // Increasing the variable for number of turns taken to avoid overly-long game
-      numTurns = (numTurns + 1);
+      numTurns++;
 
       // Audio plays for a winning turn
       // Clip from: https://freesound.org/
@@ -281,7 +281,7 @@ function attackContinent() {
       playerTurn = "Diplomat";
       otherTurn = 'General';
       winFail = ' FAILED to reduce your power!'
-      numTurns = (numTurns + 1);
+      numTurns++;
 
       // Audio plays for a losing turn
       // Clip from: https://freesound.org/
@@ -295,7 +295,7 @@ function attackContinent() {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' took your continent away!'
-      numTurns = (numTurns + 1);
+      numTurns++;
 
       // Variable plays for a winning turn
       var audio = new Audio('audio/violin-strum.wav');
@@ -306,7 +306,7 @@ function attackContinent() {
       playerTurn = "General";
       otherTurn = 'Diplomat';
       winFail = ' FAILED to reduce your power!'
-      numTurns = (numTurns + 1);
+      numTurns++;
 
       // Audio plays for a losing turn
       var audio = new Audio('audio/low-string.wav');
