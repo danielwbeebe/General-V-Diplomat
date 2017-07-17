@@ -55,7 +55,7 @@ Here is the JavaScript function to randomly select a new winner for each turn, u
             
             if (randNum === 0) {
                 turnWinner = "General";
-            } else if (randNum === 1) {
+            } else {
                 turnWinner = "Diplomat";
             }
         };

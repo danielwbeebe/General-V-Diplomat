@@ -196,7 +196,7 @@ function randomWinner() {
     // Selecting either General or Diplomat to win an attack, with 50/50 chance
     if (randNum === 0) {
       turnWinner = "General";
-    } else if (randNum === 1) {
+    } else {
       turnWinner = "Diplomat";
     }
   };
