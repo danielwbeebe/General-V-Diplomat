@@ -35,19 +35,6 @@ In terms of game structure, the game is broken down into 3 parts: (1) introducti
 
 ### Sample Code
 
-Here is the JavaScript code for determining who gets the first move in the game:
-
-    function randomPlayer() {
-
-      var randNum = Math.floor(Math.random() * 2);
-
-      if (randNum === 0) {
-        playerTurn = "General";
-      } else {
-        playerTurn = "Diplomat";
-      }
-    };
-
 Here is the JavaScript function to start the game play after the board is set up:
 
     function playGame() {
@@ -58,6 +45,20 @@ Here is the JavaScript function to start the game play after the board is set up
 
         var audio = new Audio('audio/war-audio.wav');
         audio.play();
+    };
+
+Here is the JavaScript function to randomly select a new winner for each turn, until the game goes beyond 25 moves, at which point a player is randomly selected to win all moves going forward. Although the game will often end in fewer than 25 moves, without some kind of a cap, the game could go on for a very long time and become more tedious than enjoyable.
+
+    function randomWinner() {
+        if (numTurns < 25) {
+            var randNum = Math.floor(Math.random() * 2);
+            
+            if (randNum === 0) {
+                turnWinner = "General";
+            } else if (randNum === 1) {
+                turnWinner = "Diplomat";
+            }
+        };
     };
 
 ### Challenges
