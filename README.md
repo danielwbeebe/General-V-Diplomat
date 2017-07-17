@@ -12,7 +12,7 @@ The game begins with a short introduction to the game. Before starting the game,
 
 Next, the General and Diplomat alternate in choosing their continents. Each player will control 3 continents at the start.
 
-After the continents are selected, the game play begins. The General 'attacks' a continent each turn. The Diplomat 'negotiates' with a continent for each turn. A player can attack or negotiate with any continent, regardless of location. There is a 50% chance of success. Success means that the player now controls a new continent. Failure means that the player loses a continent. Skipping turns is not allowed. 
+After the continents are selected, the game play begins. The General 'attacks' a continent each turn. The Diplomat 'negotiates' with a continent for each turn. A player can attack or negotiate with any continent, regardless of location. There is a 50% chance of success. Success means that the player now controls a new continent. Skipping turns is not allowed. 
 
 The "Turn" box declares whose turn it is. The "Status" box tells whether the last player's move succeeded or failed.
 
