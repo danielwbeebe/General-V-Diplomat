@@ -188,7 +188,7 @@ function randomWinner() {
   sets a maximum number of turns before a random winner is selected,
   to avoid an overly long game caused by the 50/50 chance for each turn
   */
-  if (numTurns < 20) {
+  if (numTurns < 25) {
 
     // Using a random number to pick a winner for each attack
     var randNum = Math.floor(Math.random() * 2);
