@@ -48,6 +48,18 @@ Here is the JavaScript code for determining who gets the first move in the game:
       }
     };
 
+Here is the JavaScript function to start the game play after the board is set up:
+
+    function playGame() {
+        document.getElementById("status-text").innerHTML = "General, attack BLUE continents.<br>Diplomat, negotiate with RED continents.";
+        document.getElementById("turn-message").innerHTML = `${playerTurn}, it's your turn.`;
+
+        addNewListeners();
+
+        var audio = new Audio('audio/war-audio.wav');
+        audio.play();
+    };
+
 ### Challenges
 
 In terms of challenges, in the JavaScript, DOM manipulation is used to replace the introduction text with the rules of the game. Initially, the typewriter effect did not display for the rules. However, I overcame that challenge by using DOM manipulation to completely remove the introduction (including its HTML tags), creating a new 'div' tag for the rules section, with the 'announceTitle' and 'announceText' classes so that the CSS animations are called again when the rules text appears.
